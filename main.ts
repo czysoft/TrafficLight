@@ -1,0 +1,31 @@
+function 灯控制 (红: number, 黄: number, 绿: number) {
+    pins.digitalWritePin(DigitalPin.P0, 绿)
+    pins.digitalWritePin(DigitalPin.P1, 黄)
+    pins.digitalWritePin(DigitalPin.P2, 红)
+}
+function 灯控制2 (红: number, 黄: number, 绿: number) {
+    pins.digitalWritePin(DigitalPin.P3, 绿)
+    pins.digitalWritePin(DigitalPin.P4, 黄)
+    pins.digitalWritePin(DigitalPin.P6, 红)
+}
+led.enable(false)
+basic.forever(function () {
+    灯控制(0, 0, 0)
+    灯控制2(0, 0, 0)
+    basic.pause(500)
+    灯控制(1, 1, 1)
+    basic.pause(500)
+    灯控制(1, 0, 0)
+    basic.pause(500)
+    灯控制(0, 1, 0)
+    basic.pause(500)
+    灯控制(0, 0, 1)
+    basic.pause(500)
+    灯控制(0, 0, 0)
+    灯控制2(1, 0, 0)
+    basic.pause(500)
+    灯控制2(0, 1, 0)
+    basic.pause(500)
+    灯控制2(0, 0, 1)
+    basic.pause(500)
+})
